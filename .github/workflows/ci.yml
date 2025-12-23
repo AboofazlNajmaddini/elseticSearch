@@ -16,7 +16,7 @@ jobs:
 
     - name: Set up Docker Compose
       run: |
-        docker-compose up --build
+        docker compose up --build
 
 
     - name: Cleanup
