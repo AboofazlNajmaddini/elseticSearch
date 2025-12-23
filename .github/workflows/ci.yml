@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [ main ]       # یا master، هر چی شاخه اصلیته
+    branches: [ main ]  
   pull_request:
     branches: [ main ]
 
@@ -16,7 +16,7 @@ jobs:
 
     - name: Set up Docker Compose
       run: |
-        docker compose up --build
+        docker compose up --build --abort-on-container-exit
 
 
     - name: Cleanup
