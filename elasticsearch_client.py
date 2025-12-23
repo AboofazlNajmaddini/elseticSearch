@@ -1,7 +1,7 @@
 from elasticsearch import Elasticsearch
 
 def get_client():
-    return Elasticsearch("http://localhost:9200")
+    return Elasticsearch("http://elasticsearch:9200")
 
 def create_index_if_not_exists(es, index_name="books"):
     if not es.indices.exists(index=index_name):
