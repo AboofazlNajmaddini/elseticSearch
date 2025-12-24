@@ -22,7 +22,7 @@ jobs:
         docker compose down
 
   deploy:
-    needs: test                  # ← خیلی مهم: فقط اگر job تست موفقیت‌آمیز بود، این ران بشه
+    needs: test      
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
 

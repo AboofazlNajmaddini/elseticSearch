@@ -56,7 +56,7 @@ def test_search_no_match(es_client, clean_index):
 
     create_index_if_not_exists(es_client, index_name)
 
-    doc = {"title": "تست", "author": "someone_else", "year": 2024}
+    doc = {"title": "test", "author": "someone_else", "year": 2024}
     index_document(es_client, index_name=index_name, doc_id=1, document=doc)
 
     results = search_documents(es_client, index_name=index_name, author_name="aboofazl")
