@@ -1,7 +1,5 @@
 # Elasticsearch CI/CD Practice Project
 
-[![CI/CD Pipeline](https://github.com/AboofazlNajmaddini/elseticSearch/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/AboofazlNajmaddini/elseticSearch/actions/workflows/ci-cd.yml)
-
 This is a hands-on practice project to learn **Continuous Integration (CI)** and basics of **Continuous Delivery (CD)** using modern DevOps tools.
 
 The goal was to build a simple Python application that interacts with Elasticsearch, write automated tests, containerize everything with Docker, and set up a full CI/CD pipeline with GitHub Actions.
