@@ -1,17 +1,31 @@
-name: CD - Deploy to Render
+name: CI/CD Pipeline
 
 on:
   push:
     branches: [ main ]
-  workflow_run: 
-    workflows: ["CI"]
-    types:
-      - completed
 
 jobs:
-  deploy:
+  test:
     runs-on: ubuntu-latest
-    if: ${{ github.event.workflow_run.conclusion == 'success' }} 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Run tests with Docker Compose
+      run: |
+        docker compose up --build --abort-on-container-exit
+
+    - name: Cleanup
+      if: always()
+      run: |
+        docker compose down
+
+  deploy:
+    needs: test                  # ← خیلی مهم: فقط اگر job تست موفقیت‌آمیز بود، این ران بشه
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
     steps:
     - name: Trigger Render Deploy
       run: |
