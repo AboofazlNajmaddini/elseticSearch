@@ -39,7 +39,7 @@ The goal was to build a simple Python application that interacts with Elasticsea
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/[your-username]/elasticsearch-ci-practice.git
+   git clone https://github.com/AboofazlNajmaddini/elseticSearch.git
    cd elasticsearch-ci-practice
    ```
 
