@@ -12,10 +12,10 @@ test_job:
   stage: test
   image: docker:stable   
   script:
-    - echo "شروع اجرای تست‌ها..."
+    - echo "starting tests..."
     - docker compose version   
     - docker compose up --build --abort-on-container-exit   
-    - echo "تست‌ها با موفقیت پاس شدن!"
+    - echo "tests passed successfully!"
     - docker compose down --volumes   
   tags:
     - docker   
